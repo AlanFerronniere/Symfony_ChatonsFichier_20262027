@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Les photos de {{ nomDuDossier }}{% endblock %}
+
+{% block body %}
+    <h1>Les photos de {{ nomDuDossier }}</h1>
+    <div class="row">
+        {% for fichier in fichiers %}
+            <div class="col-3">
+                <img class="img-fluid" src="{{ asset(fichier) }}">
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

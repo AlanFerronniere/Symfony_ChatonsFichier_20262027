@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Bienvenue sur la photothèque{% endblock %}
+
+{% block body %}
+    <h1>Bienvenue sur la photothèque</h1>
+    <ul>
+        {% for dossier in dossiers %}
+            <li>
+                <a href="{{ path("app_dossier", {"nomDuDossier":dossier.filename}) }}">
+                    {{ dossier.filename }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
